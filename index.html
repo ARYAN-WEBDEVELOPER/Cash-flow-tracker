@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cash Flow Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>💰 Cash Flow Tracker</h1>
+
+    <!-- Top Controls -->
+    <div class="top-controls">
+      <input type="number" id="salary" placeholder="Enter Salary">
+      <button onclick="setSalary()">Set Salary</button>
+
+      <select id="currency" onchange="changeCurrency()">
+        <option value="INR">INR</option>
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+      </select>
+    </div>
+
+    <!-- Expense Form -->
+    <div class="expense-form">
+      <h3>Add Expense</h3>
+      <input type="text" id="expenseName" placeholder="Expense Name">
+      <input type="number" id="expenseAmount" placeholder="Amount">
+      <button onclick="addExpense()">Add Expense</button>
+    </div>
+
+    <!-- Dashboard Cards -->
+    <div class="cards">
+      <div class="card">
+        <h4>Salary</h4>
+        <p id="totalSalary">0</p>
+      </div>
+      <div class="card">
+        <h4>Expenses</h4>
+        <p id="totalExpense">0</p>
+      </div>
+      <div class="card">
+        <h4>Balance</h4>
+        <p id="balance">0</p>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <button class="download-btn" onclick="downloadPDF()">Download Report</button>
+
+    <!-- Expense List -->
+    <ul id="expenseList"></ul>
+
+    <!-- Chart -->
+    <canvas id="myChart"></canvas>
+
+    
+
+  </div>
+  <div id="toast"></div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
